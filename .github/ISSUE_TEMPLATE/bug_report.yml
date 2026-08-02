@@ -1,0 +1,37 @@
+name: Bug report
+description: Report reproducible incorrect behavior using synthetic log data.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach production logs, credentials, or personal data.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Synthetic reproduction
+      description: Include the command and minimal synthetic input.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Python 3.14, Ubuntu 24.04 on WSL2"
+    validations:
+      required: true
+
