@@ -1,4 +1,4 @@
-FROM python:3.14.4-slim-bookworm AS builder
+FROM python:3.14.6-slim-bookworm AS builder
 
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PIP_NO_CACHE_DIR=1 \
@@ -12,7 +12,7 @@ COPY pyproject.toml README.md LICENSE ./
 COPY src ./src
 RUN pip install --no-compile .
 
-FROM python:3.14.4-slim-bookworm AS runtime
+FROM python:3.14.6-slim-bookworm AS runtime
 
 ENV PATH="/opt/venv/bin:${PATH}" \
     PYTHONUNBUFFERED=1 \
