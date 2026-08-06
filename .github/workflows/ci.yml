@@ -24,10 +24,10 @@ jobs:
         python-version: ["3.12", "3.14"]
     steps:
       - name: Check out repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
       - name: Install uv and Python
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9  # v7
         with:
           version: "0.11.7"
           python-version: ${{ matrix.python-version }}
@@ -50,7 +50,7 @@ jobs:
 
       - name: Upload coverage report
         if: matrix.python-version == '3.14'
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6
         with:
           name: coverage-report
           path: coverage.xml
@@ -67,10 +67,10 @@ jobs:
     needs: quality
     steps:
       - name: Check out repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
       - name: Install uv and Python
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9  # v7
         with:
           version: "0.11.7"
           python-version: "3.14"
@@ -83,7 +83,7 @@ jobs:
         run: uv run python benchmarks/run_benchmark.py --sizes 1000 10000 --repeats 1 --json > benchmark.json
 
       - name: Upload benchmark artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6
         with:
           name: benchmark-smoke
           path: benchmark.json
@@ -97,7 +97,7 @@ jobs:
     needs: quality
     steps:
       - name: Check out repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
       - name: Build runtime image
         run: docker build --target runtime --tag distributed-log-intelligence:ci .
@@ -106,4 +106,3 @@ jobs:
         run: |
           test "$(docker run --rm --entrypoint id distributed-log-intelligence:ci -u)" != "0"
           docker run --rm --network none distributed-log-intelligence:ci --version
-
