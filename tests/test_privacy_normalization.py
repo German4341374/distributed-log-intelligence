@@ -12,7 +12,7 @@ from distributed_log_intelligence.privacy import find_sensitive_types, mask_text
         ("contact demo.user@example.test", "[REDACTED_EMAIL]"),
         ("client 192.0.2.44 failed", "[REDACTED_IP]"),
         ("Authorization: Bearer abcdefghijklmnop", "[REDACTED_TOKEN]"),
-        ("api_key=abcdef123456", "[REDACTED_SECRET]"),
+        ("api_key=abcdef123456", "[REDACTED_SECRET]"),  # gitleaks:allow -- masking fixture
         ("call +1 (202) 555-0142", "[REDACTED_PHONE]"),
     ],
 )
