@@ -50,7 +50,7 @@ jobs:
 
       - name: Upload coverage report
         if: matrix.python-version == '3.14'
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
           name: coverage-report
           path: coverage.xml
@@ -83,7 +83,7 @@ jobs:
         run: uv run python benchmarks/run_benchmark.py --sizes 1000 10000 --repeats 1 --json > benchmark.json
 
       - name: Upload benchmark artifact
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
           name: benchmark-smoke
           path: benchmark.json
