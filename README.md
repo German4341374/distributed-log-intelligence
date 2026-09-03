@@ -256,7 +256,7 @@ docs/                              Architecture, privacy, data handling, results
 .github/workflows/                 Quality, test, benchmark, build, and container CI
 ```
 
-## Future improvements
+## Next steps
 
 - Optional on-disk aggregation for extremely high-cardinality time ranges.
 - Pluggable parsers for vendor-specific formats without expanding the core schema.
@@ -267,4 +267,3 @@ docs/                              Architecture, privacy, data handling, results
 ## License
 
 Distributed under the [MIT License](LICENSE).
-
