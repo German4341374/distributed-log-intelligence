@@ -4,11 +4,12 @@
 [![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-`distributed-log-intelligence` is a local-first command-line tool for support and
-operations engineers who need to investigate logs from several services without
-uploading confidential data. It streams plain text, JSON Lines, CSV, and gzip files,
-normalizes timestamps to UTC, groups recurring failures, finds bursts and anomalous time
-windows, and reconstructs cross-service flows by correlation ID.
+For those cases where one request leaves a trail across several services and files.
+This CLI reads the logs together, puts timestamps in UTC, groups repeated errors, and
+follows correlation IDs across services.
+
+It reads text, JSON Lines, CSV, and gzip files in a stream. You can also compare two periods,
+look for spikes in errors, and export a report. The files stay on your machine.
 
 ## Highlights
 
